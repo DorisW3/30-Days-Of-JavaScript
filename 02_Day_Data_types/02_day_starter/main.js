@@ -103,3 +103,39 @@ const sliceOut =
 console.log(sliceOut.indexOf("because"));
 console.log(sliceOut.lastIndexOf("because") + 7);
 console.log(sliceOut.substring(31, 54));
+
+// ### Exercise: Level 3
+
+const aboutLove =
+  "Love is the best thing in this world. Some found their love and some are still looking for their love.";
+let pattern = /love/gi;
+console.log(aboutLove.match(pattern));
+
+let repetitionOf = /because/g;
+console.log(sliceOut.match(repetitionOf));
+
+const cleanSentence =
+  "%I $am@% a %tea@cher%, &and& I lo%#ve %te@a@ching%;. The@re $is no@th@ing; &as& mo@re rewarding as educa@ting &and& @emp%o@weri@ng peo@ple. ;I found tea@ching m%o@re interesting tha@n any ot#her %jo@bs. %Do@es thi%s mo@tiv#ate yo@u to be a tea@cher!? %Th#is 30#Days&OfJavaScript &is al@so $the $resu@lt of &love& of tea&ching";
+
+const clearSentence = cleanSentence.replaceAll(/\W/gi, " ");
+console.log(clearSentence);
+const deleteGaps = clearSentence.replaceAll("  ", " ").trim();
+console.log(deleteGaps);
+const noGaps = deleteGaps.replaceAll(" ", "");
+/* let regEx = /\w{3,}?/gi;
+const mostFrequent = noGaps.match(regEx);
+console.log(mostFrequent); */
+
+const income =
+  "He earns 5000 euro from salary per month, 10000 euro annual bonus, 15000 euro online courses per month.";
+
+let regEx = /\d+/g;
+const incomeScoures = income.match(regEx);
+console.log(incomeScoures);
+
+const salary = incomeScoures[0] * 12;
+const bonus = incomeScoures[1] * 1;
+const courses = incomeScoures[2] * 12;
+console.log(salary, bonus, courses);
+const totalIncome = salary + bonus + courses;
+console.log(totalIncome);
