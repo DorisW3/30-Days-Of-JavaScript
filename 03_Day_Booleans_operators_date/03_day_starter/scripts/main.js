@@ -101,4 +101,135 @@ let noOnIncluded = !dragonAndPython.includes("on");
 console.log("no 'on' included", noOnIncluded);
 
 let today = new Date();
-console.log(today);
+console.log("date: ", today);
+console.log("year: ", today.getFullYear());
+console.log("month: ", today.getMonth());
+console.log("day: ", today.getDate());
+console.log("hours: ", today.getHours());
+console.log("minutes: ", today.getMinutes());
+console.log("day: ", today.getTime());
+
+// ### Exercise: Level 2
+
+/* let base = prompt("Enter base", "base goes here");
+console.log("base: ", base);
+let height = prompt("Enter height", "height goes here");
+console.log("height: ", height);
+console.log("The area of the triangle is ", 0.5 * base * height);
+
+let a = prompt("Enter side a", "a goes here");
+let b = prompt("Enter side b", "b goes here");
+let c = prompt("Enter side c", "c goes here");
+console.log("The perimeter of the triangle is ", a + b + c);
+
+let length = prompt("Enter length", "length goes here");
+let width = prompt("Enter width", "width goes here");
+console.log("The area of rectangle is ", length * width);
+console.log("The perimeter of rectangle is ", 2 * (length + width)); 
+
+let radius = prompt("Enter radius", "radius goes here");
+console.log("circle area: ", Math.PI * radius**2)
+console.log("circle circumference: ", 2 * Math.PI * radius); 
+
+// 5.-8.
+
+let hours = prompt("Enter hours", "hours goes here");
+let rate = prompt("Enter rate", "rate goes here");
+console.log("Your weekly earning is ", hours * rate); */
+
+let name = "minimeeeeeeee";
+
+name.length > 7
+  ? console.log("Your name is long!")
+  : console.log("Your name is short!");
+
+let firstName1 = "Donald";
+let lastName1 = "Duck";
+
+firstName1.length > lastName1.length
+  ? console.log(
+      "Your first name, " +
+        firstName1 +
+        " is longer than your family name, " +
+        lastName1
+    )
+  : console.log(
+      "Your first name, " +
+        firstName1 +
+        " is shorter than your family name, " +
+        lastName1
+    );
+
+let myAge = 33;
+let yourAge = 43;
+let myAgeGreaterThanYourAge = myAge - yourAge;
+let yourAgeGreaterThanMyAge = yourAge - myAge;
+
+myAge > yourAge
+  ? console.log("I am " + myAgeGreaterThanYourAge + " years older than you.")
+  : console.log("You are " + yourAgeGreaterThanMyAge + " years older than me.");
+
+/* let yearOfBirth = prompt("Enter year of your birth", "birth year goes here");
+let userAge = today.getFullYear() - yearOfBirth;
+let yearToYoung = 18 - userAge;
+
+yearOfBirth < 2006
+  ? console.log("You are " + userAge + ". You are old enough to drive")
+  : console.log(
+      "You are " +
+        userAge +
+        ". You will be allowed to drive after " +
+        yearToYoung +
+        " years"
+    );
+
+let yearsOfLiving =
+  0 <=
+  prompt(
+    "Enter number of years you live",
+    "lived years (0-100 years) goes here"
+  ) >=
+  100;
+let secondsOfLiving = yearsOfLiving * 31536000;
+
+console.log("You lived " + secondsOfLiving + " seconds."); */
+
+const now = new Date();
+console.log(
+  now.getFullYear() +
+    "-" +
+    now.getMonth() +
+    1 +
+    "-" +
+    now.getDate() +
+    " " +
+    now.getHours() +
+    ":" +
+    now.getMinutes()
+);
+
+console.log(
+  now.getDate() +
+    "-" +
+    now.getMonth() +
+    1 +
+    "-" +
+    now.getFullYear() +
+    " " +
+    now.getHours() +
+    ":" +
+    now.getMinutes()
+);
+
+console.log(
+  now.getDate() +
+    "/" +
+    now.getMonth() +
+    1 +
+    "/" +
+    now.getFullYear() +
+    " " +
+    now.getHours() +
+    ":" +
+    now.getMinutes()
+);

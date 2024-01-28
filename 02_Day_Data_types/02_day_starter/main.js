@@ -112,19 +112,41 @@ let pattern = /love/gi;
 console.log(aboutLove.match(pattern));
 
 let repetitionOf = /because/g;
-console.log(sliceOut.match(repetitionOf));
+console.log("repetition of: ", sliceOut.match(repetitionOf));
 
 const cleanSentence =
-  "%I $am@% a %tea@cher%, &and& I lo%#ve %te@a@ching%;. The@re $is no@th@ing; &as& mo@re rewarding as educa@ting &and& @emp%o@weri@ng peo@ple. ;I found tea@ching m%o@re interesting tha@n any ot#her %jo@bs. %Do@es thi%s mo@tiv#ate yo@u to be a tea@cher!? %Th#is 30#Days&OfJavaScript &is al@so $the $resu@lt of &love& of tea&ching";
+  " %I $am@% a %tea@cher%, &and& I lo%#ve %te@a@ching%;. The@re $is no@th@ing; &as& mo@re rewarding as educa@ting &and& @emp%o@weri@ng peo@ple. ;I found tea@ching m%o@re interesting tha@n any ot#her %jo@bs. %Do@es thi%s mo@tiv#ate yo@u to be a tea@cher!? %Th#is 30#Days&OfJavaScript &is al@so $the $resu@lt of &love& of tea&ching";
 
-const clearSentence = cleanSentence.replaceAll(/\W/gi, "");
-console.log("clear: ", clearSentence);
-const deleteGaps = clearSentence.replaceAll("  ", " ").trim();
-console.log(deleteGaps);
-const noGaps = deleteGaps.replaceAll(" ", "");
-/* let regEx = /\w{3,}?/gi;
-const mostFrequent = noGaps.match(regEx);
-console.log(mostFrequent); */
+const clearSentence = cleanSentence.replaceAll(
+  /[+\-/\\(){}\[\]<>!§$%&=?*#€¿&_\",.:;0-9@]/gi,
+  ""
+);
+const trim = clearSentence.toLowerCase();
+console.log("lowercase ", trim);
+
+let regExp = / \w+/gi;
+const words = trim.match(regExp);
+console.log("all words ", words);
+const sort = words.sort();
+const uniqueList = [...new Set(sort)];
+console.log("unique ", uniqueList);
+
+let maxCount = 0;
+let maxWord = "";
+for (let i = 0; i <= uniqueList.length - 1; i++) {
+  console.log(
+    "anzahl wörter ",
+    trim.match(new RegExp(uniqueList[i], "gi")).length
+  );
+  const word = uniqueList[i];
+  const count = trim.match(new RegExp(uniqueList[i], "gi")).length;
+
+  if (count > maxCount) {
+    maxCount = count;
+    maxWord = word;
+  }
+}
+console.log(maxCount, maxWord);
 
 const income =
   "He earns 5000 euro from salary per month, 10000 euro annual bonus, 15000 euro online courses per month.";
