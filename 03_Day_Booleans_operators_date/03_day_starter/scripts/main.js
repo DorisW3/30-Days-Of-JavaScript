@@ -195,41 +195,48 @@ let secondsOfLiving = yearsOfLiving * 31536000;
 console.log("You lived " + secondsOfLiving + " seconds."); */
 
 const now = new Date();
-console.log(
+console.log(now);
+
+const options = {
+  year: "numeric",
+  month: "2-digit",
+  day: "2-digit",
+  hour: "2-digit",
+  minute: "2-digit",
+};
+
+let month = now.getMonth() + 1;
+
+let yearMonthDay =
   now.getFullYear() +
-    "-" +
-    now.getMonth() +
-    1 +
-    "-" +
-    now.getDate() +
-    " " +
-    now.getHours() +
-    ":" +
-    now.getMinutes()
-);
+  "-" +
+  month +
+  "-" +
+  now.getDate() +
+  " " +
+  now.getHours() +
+  ":" +
+  now.getMinutes();
+
+console.log("YYYY-MM-DD HH:mm ", yearMonthDay);
+
+let dayMonthYear =
+  now.getDate() +
+  "-" +
+  month +
+  "-" +
+  now.getFullYear() +
+  " " +
+  now.getHours() +
+  ":" +
+  now.getMinutes();
+
+console.log("DD-MM-YYYY HH:mm ", dayMonthYear);
+console.log("DD/MM/YYYY HH:mm ", now.toLocaleString("en-GB", options));
+
+// ### Exercises: Level 3
 
 console.log(
-  now.getDate() +
-    "-" +
-    now.getMonth() +
-    1 +
-    "-" +
-    now.getFullYear() +
-    " " +
-    now.getHours() +
-    ":" +
-    now.getMinutes()
-);
-
-console.log(
-  now.getDate() +
-    "/" +
-    now.getMonth() +
-    1 +
-    "/" +
-    now.getFullYear() +
-    " " +
-    now.getHours() +
-    ":" +
-    now.getMinutes()
+  "YYYY-MM-DD HH:mm with 2 digits ",
+  now.toLocaleString("sv-SE", options)
 );
